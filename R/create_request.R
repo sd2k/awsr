@@ -11,6 +11,16 @@ create_request = function(method = "GET",
                                     ),  ) {
 }
 
+string_to_sign = function(hashed_canonical_request, 
+                          credential_scope,
+                          request_date = today(),
+                          algorithm = 'AWS4-HMAC-SHA256') {
+  str_c(algorithm, '\n',
+        request_date, '\n',
+        credential_scope, '\n',
+        hashed_canonical_request)
+}
+
 # Function to create the signing key used to calculate the final signature
 signing_key = function(key, date_stamp, region_name, service_name) {
   key_date = digest::hmac(str_c("AWS4", key), date_stamp, algo = "sha256", raw = TRUE)
