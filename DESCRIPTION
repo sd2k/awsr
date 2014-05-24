@@ -1,0 +1,9 @@
+Package: awsr
+Title: Easy connection to AWS S3 and EC2 instances for analysis.
+Version: 0.1
+URL: http://github.com/sd2k/awsr
+Authors@R: person("Ben", "Sully", email = "ben.sully@yougov.com", role = c("aut", "cre"))
+Description: 
+Depends: R (>= 3.1.0)
+License: MIT
+LazyData: true
