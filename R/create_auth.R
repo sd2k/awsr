@@ -2,11 +2,8 @@ require(httr)
 require(RCurl)
 require(stringr)
 
-aws_key = function() 'AKIAJGE7TQU3PDEGGGGQ' #Sys.getenv('AWS_KEY')
-aws_secret = function() {
-  #Sys.getenv('AWS_SECRET_KEY')
-  return('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')
-}
+aws_key = function() Sys.getenv('AWS_KEY')
+aws_secret = function() Sys.getenv('AWS_SECRET_KEY')
 
 # Miscellaneous functions to format time and date
 now <- function() format(lubridate::now(), '%Y%m%dT%H%M%SZ')
